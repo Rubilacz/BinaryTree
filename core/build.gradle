@@ -8,9 +8,9 @@ dependencies {
     compile "org.jetbrains.kotlin:kotlin-stdlib"
 }
 
-task execute(type: Exec) {
-    workingDir './src/main/kotlin/org/clonecat/binarytree/'
-    commandLine 'kotlinc', '-script', 'Test.kts', 'testtest'
+task execute(dependsOn: build, type: Exec) {
+    workingDir './build/libs'
+    commandLine 'java', '-cp', "$kotlin_dir/lib/kotlin-runtime.jar:core.jar", 'org.clonecat.binarytree.TestKt'
 }
 
 defaultTasks 'execute'
