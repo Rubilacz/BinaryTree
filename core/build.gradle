@@ -1,0 +1,16 @@
+apply plugin: "kotlin"
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile "org.jetbrains.kotlin:kotlin-stdlib"
+}
+
+task execute(type: Exec) {
+    workingDir './src/main/kotlin/org/clonecat/binarytree/'
+    commandLine 'kotlinc', '-script', 'Test.kts', 'testtest'
+}
+
+defaultTasks 'execute'
