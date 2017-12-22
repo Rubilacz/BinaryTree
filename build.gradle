@@ -1,7 +1,6 @@
 
 buildscript {
     ext.kotlin_version = '1.2.10'
-    ext.kotlin_dir = '/home/rubilacz/toolkit/kotlinc/'
 
     repositories {
         maven {
@@ -11,5 +10,13 @@ buildscript {
 
     dependencies {
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    }
+}
+
+allprojects {
+    repositories {
+        maven {
+            url 'http://maven.aliyun.com/nexus/content/groups/public/'
+        }
     }
 }

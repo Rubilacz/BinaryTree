@@ -1,16 +1,7 @@
 apply plugin: "kotlin"
 
-repositories {
-    mavenCentral()
-}
-
 dependencies {
     compile "org.jetbrains.kotlin:kotlin-stdlib"
+    testCompile "org.jetbrains.kotlin:kotlin-test"
+    testCompile "org.jetbrains.kotlin:kotlin-test-junit"
 }
-
-task execute(dependsOn: build, type: Exec) {
-    workingDir './build/libs'
-    commandLine 'java', '-cp', "$kotlin_dir/lib/kotlin-runtime.jar:core.jar", 'org.clonecat.binarytree.TestKt'
-}
-
-defaultTasks 'execute'
