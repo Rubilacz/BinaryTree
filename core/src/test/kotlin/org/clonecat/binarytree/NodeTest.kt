@@ -1,7 +1,6 @@
 import org.junit.Test
 import org.junit.Before
 import kotlin.test.*
-import java.io.PrintWriter
 
 import org.clonecat.binarytree.Node
 
@@ -19,13 +18,6 @@ class NodeTest {
         assertEquals("Node1", node?.value)
         assertEquals("SubNode1", node?.left!!.value)
         assertEquals(null, node?.right)
-    }
-
-    @Test
-    fun testtoGraphic() {
-        val writer = PrintWriter("build/node_to_graphic.txt")
-        node?.toGraphic(writer)
-        writer.close()
     }
 
 }
